@@ -13,8 +13,7 @@ export const site = {
   email: '',
 
   instagram: 'https://www.instagram.com/frontyardsigns',
-  // OWNER: replace with the exact Facebook page link
-  facebook: 'https://www.facebook.com/search/top?q=Front%20Yard%20Signs',
+  facebook: 'https://www.facebook.com/profile.php?id=61595078723755',
 
   // Add ONE of these to start receiving orders:
   // - formEndpoint: a form service address (Formspree, Getform, etc.). Orders are POSTed as JSON.
