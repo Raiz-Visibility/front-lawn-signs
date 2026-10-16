@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.webp';
 import { site } from '../data/site';
 ---
 <div class="grass" aria-hidden="true" style="background-color:var(--sky)"></div>
 <footer>
   <div class="wrap foot">
     <div>
-      <a class="logo big" href="#top" aria-label="Front Yard Signs, back to top"><small>FRONT YARD</small><b aria-hidden="true"><span class="c1">S</span><span class="c2">I</span><span class="c3">G</span><span class="c4">N</span><span class="c5">S</span></b></a>
+      <a class="logo big" href="#top" aria-label="Front Yard Signs, back to top"><Image src={logo} alt="" width={150} height={150} densities={[1, 2]} /></a>
       <p style="margin-top:12px;font-weight:700">Make any occasion a BIG celebration!</p>
       <p class="small" style="margin-top:6px">Locally owned and operated in Angus, Ontario.</p>
     </div>

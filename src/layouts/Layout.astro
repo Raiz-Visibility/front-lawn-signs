@@ -1,6 +1,12 @@
 ---
 import '../styles/global.css';
+import { getImage } from 'astro:assets';
 import { site } from '../data/site';
+import logo from '../assets/logo.webp';
+
+const favicon = await getImage({ src: logo, width: 64, height: 64, format: 'png' });
+const touchIcon = await getImage({ src: logo, width: 180, height: 180, format: 'png' });
+const ogImage = await getImage({ src: logo, width: 600, height: 600, format: 'png' });
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).href;
 ---
@@ -12,13 +18,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).href;
     <title>{site.title}</title>
     <meta name="description" content={site.description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <link rel="icon" href={favicon.src} type="image/png" />
+    <link rel="apple-touch-icon" href={touchIcon.src} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={site.title} />
     <meta property="og:description" content={site.ogDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content="en_CA" />
+    <meta property="og:image" content={new URL(ogImage.src, Astro.site ?? site.url).href} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

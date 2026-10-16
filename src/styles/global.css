@@ -15,7 +15,7 @@
 }
 :root{color-scheme:light}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{margin:0;background:var(--sky);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.55;
   padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px));overflow-x:hidden}
 img,svg{max-width:100%}
@@ -46,11 +46,12 @@ a{color:inherit}
 /* header */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#fff;border-bottom:4px solid var(--ink)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:60}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px;padding-block:6px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:84px;padding-block:6px}
 .logo{display:flex;flex-direction:column;line-height:.85;text-decoration:none;color:var(--ink)}
 .logo small{font-family:var(--font-brush);font-size:.8rem;letter-spacing:.14em;color:var(--ink)}
 .logo b{font-family:var(--font-display);font-weight:400;font-size:2rem;-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:0 3px 0 var(--ink)}
-.logo.big b{font-size:3rem}
+.logo img{display:block;width:72px;height:72px;border-radius:50%}
+.logo.big img{width:150px;height:150px}
 
 /* hero */
 .hero{position:relative;background:linear-gradient(var(--sky) 0%,var(--sky-light) 100%);padding-block:40px 0;overflow:hidden}
