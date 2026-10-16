@@ -1,0 +1,28 @@
+---
+// [x, y, scale] for each flamingo in the flock.
+const flock = [[355, 190, 0.95], [70, 185, 1], [145, 195, 0.9], [225, 182, 1.1], [300, 198, 0.85]];
+---
+<!-- FLAMINGO -->
+<section class="flam" id="flamingos" aria-labelledby="flam-h">
+  <div class="wrap flam-grid">
+    <div>
+      <h2 id="flam-h">Surprise someone with a yard full of flamingos!</h2>
+      <p>Perfect for birthdays, anniversaries and milestones. Or a harmless prank on a friend. They'll wake up to a very pink lawn.</p>
+      <a class="btn" href="#order" data-occasion="Flamingo Surprise">Order the Flamingo Surprise</a>
+    </div>
+    <div>
+      <div class="art">
+        <svg viewBox="0 0 420 260" role="img" aria-label="Illustration of five pink flamingos standing on a lawn under a heart balloon.">
+          <rect width="420" height="260" rx="20" fill="#FFB3D6"/>
+          <path d="M0 190c90-20 200-20 420 0v70H0z" fill="#3DB54A"/>
+          <g class="bob"><use href="#i-balloon" x="330" y="10" width="64" height="64" style="color:#FFD21F"/></g>
+          {flock.map(([x, y, k]) => (
+            <g transform={`translate(${x} ${y}) scale(${k})`}><path d="M0 0v62" stroke="#1B1030" stroke-width="5"/><ellipse cx="0" cy="-8" rx="22" ry="16" fill="#FF6FB0" stroke="#1B1030" stroke-width="4"/><path d="M12 -14c14-10 8-34 2-44" fill="none" stroke="#1B1030" stroke-width="9" stroke-linecap="round"/><path d="M12 -14c14-10 8-34 2-44" fill="none" stroke="#FF6FB0" stroke-width="4.5" stroke-linecap="round"/><circle cx="18" cy="-60" r="7" fill="#FF6FB0" stroke="#1B1030" stroke-width="3"/><path d="M23 -60l10 4-9 3z" fill="#1B1030"/></g>
+          ))}
+        </svg>
+      </div>
+      <div class="photo-ph">Add photo of a real flamingo display here</div>
+    </div>
+  </div>
+</section>
+<div class="grass" aria-hidden="true" style="background-color:var(--pink)"></div><div class="grass-fill" aria-hidden="true"></div>

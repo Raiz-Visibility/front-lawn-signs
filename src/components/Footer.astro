@@ -1,0 +1,26 @@
+---
+import { site } from '../data/site';
+---
+<div class="grass" aria-hidden="true" style="background-color:var(--sky)"></div>
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="logo big" href="#top" aria-label="Front Yard Signs, back to top"><small>FRONT YARD</small><b aria-hidden="true"><span class="c1">S</span><span class="c2">I</span><span class="c3">G</span><span class="c4">N</span><span class="c5">S</span></b></a>
+      <p style="margin-top:12px;font-weight:700">Make any occasion a BIG celebration!</p>
+      <p class="small" style="margin-top:6px">Locally owned and operated in Angus, Ontario.</p>
+    </div>
+    <div>
+      <p><b>Find us</b></p>
+      <p><a href={site.url}>{site.url.replace(/^https?:\/\//, '')}</a></p>
+      <div class="social">
+        <a href={site.instagram} aria-label="Front Yard Signs on Instagram (@frontyardsigns)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg></a>
+        <a href={site.facebook} aria-label="Front Yard Signs on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8V6.5c0-.7.3-1 1.1-1H17V2h-2.8C11.3 2 10 3.7 10 6.2V8H7.5v3.5H10V22h4V11.5h2.7L17 8z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p><b>Get in touch</b></p>
+      <p>Phone: {site.phone ? <a href={`tel:${site.phone.replace(/[^\d+]/g, '')}`}>{site.phone}</a> : <span class="ph">[Add phone number]</span>}</p>
+      <p>Email: {site.email ? <a href={`mailto:${site.email}`}>{site.email}</a> : <span class="ph">[Add email address]</span>}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,65 @@
+---
+// Confetti pieces, randomized once at build time.
+const colors = ['#E6177F', '#19C7D9', '#FFD21F', '#6A2FD0', '#3DB54A'];
+const confetti = Array.from({ length: 18 }, (_, i) => ({
+  left: `${(Math.random() * 96).toFixed(1)}%`,
+  background: colors[i % 5],
+  animationDelay: `${(Math.random() * 5).toFixed(2)}s`,
+  animationDuration: `${(4 + Math.random() * 3).toFixed(1)}s`,
+}));
+---
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <svg class="cloud a" viewBox="0 0 200 80" aria-hidden="true"><path d="M30 70a24 24 0 0 1 2-47 34 34 0 0 1 64-6 28 28 0 0 1 48 12 22 22 0 0 1 24 41z"/></svg>
+  <svg class="cloud b" viewBox="0 0 200 80" aria-hidden="true"><path d="M30 70a24 24 0 0 1 2-47 34 34 0 0 1 64-6 28 28 0 0 1 48 12 22 22 0 0 1 24 41z"/></svg>
+  <svg class="cloud c" viewBox="0 0 200 80" aria-hidden="true"><path d="M30 70a24 24 0 0 1 2-47 34 34 0 0 1 64-6 28 28 0 0 1 48 12 22 22 0 0 1 24 41z"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="hero-h" class="fx"><span class="c1">Make</span> <span class="c2">any</span> <span class="c3">occasion</span> <span class="c4">a</span> <span class="c5 big">BIG</span> <span class="c1">celebration!</span></h1>
+      <p class="sub">Fun, colourful, personalized lawn displays delivered, set up and picked up for you. Serving Angus and North Simcoe.</p>
+      <div class="cta-row">
+        <a class="btn btn-pink" href="#order">Order a Display</a>
+        <a class="btn btn-white" href="#packages">See Packages</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="confetti" aria-hidden="true">{confetti.map((c) => <i style={c} />)}</div>
+      <svg viewBox="0 0 600 440" role="img" aria-label="Illustration of a front lawn with a house, a Happy Birthday sign, a big heart sign, flamingos and a bunch of balloons.">
+        <!-- house -->
+        <rect x="330" y="150" width="230" height="170" rx="10" fill="#FFF3B0" stroke="#1B1030" stroke-width="5"/>
+        <path d="M310 160L445 60l135 100z" fill="#E6177F" stroke="#1B1030" stroke-width="5" stroke-linejoin="round"/>
+        <rect x="415" y="225" width="60" height="95" rx="8" fill="#6A2FD0" stroke="#1B1030" stroke-width="5"/>
+        <circle cx="463" cy="275" r="5" fill="#FFD21F"/>
+        <rect x="350" y="190" width="50" height="50" rx="6" fill="#BFE8FF" stroke="#1B1030" stroke-width="5"/>
+        <rect x="495" y="190" width="50" height="50" rx="6" fill="#BFE8FF" stroke="#1B1030" stroke-width="5"/>
+        <!-- lawn -->
+        <path d="M-20 320c120-30 260-30 400-6s200 6 260-8V460H-20z" fill="#3DB54A" stroke="#1B1030" stroke-width="5"/>
+        <path d="M0 400c150-24 330-24 600 0v60H0z" fill="#2F9A3C"/>
+        <!-- balloons (bobbing) -->
+        <g class="bob"><path d="M520 150C505 230 515 270 520 330" stroke="#1B1030" stroke-width="3" fill="none"/><ellipse cx="520" cy="118" rx="34" ry="42" fill="#19C7D9" stroke="#1B1030" stroke-width="5"/><path d="M500 95c4-10 12-14 20-14" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+        <g class="bob d1"><path d="M555 170C550 240 540 280 530 330" stroke="#1B1030" stroke-width="3" fill="none"/><ellipse cx="570" cy="140" rx="28" ry="36" fill="#FFD21F" stroke="#1B1030" stroke-width="5"/></g>
+        <g class="bob d2"><path d="M480 160C495 240 510 290 520 330" stroke="#1B1030" stroke-width="3" fill="none"/><ellipse cx="478" cy="128" rx="28" ry="36" fill="#E6177F" stroke="#1B1030" stroke-width="5"/></g>
+        <!-- sign 1 -->
+        <rect x="70" y="262" width="10" height="90" fill="#8B5A2B" stroke="#1B1030" stroke-width="4"/>
+        <g transform="rotate(-4 120 220)"><rect x="20" y="150" width="200" height="120" rx="22" fill="#fff" stroke="#E6177F" stroke-width="8"/><rect x="20" y="150" width="200" height="120" rx="22" fill="none" stroke="#1B1030" stroke-width="3"/>
+          <text x="120" y="198" text-anchor="middle" font-family="Chewy,cursive" font-size="34" fill="#E6177F" stroke="#1B1030" stroke-width="1.5" paint-order="stroke">HAPPY</text>
+          <text x="120" y="240" text-anchor="middle" font-family="Chewy,cursive" font-size="34" fill="#19C7D9" stroke="#1B1030" stroke-width="1.5" paint-order="stroke">BIRTHDAY!</text></g>
+        <!-- heart sign -->
+        <rect x="262" y="290" width="9" height="70" fill="#8B5A2B" stroke="#1B1030" stroke-width="4"/>
+        <g transform="rotate(5 266 280)"><path d="M266 292C220 262 214 226 236 212c16-10 30-2 30 14 0-16 16-24 32-14 22 14 16 50-32 80z" fill="#E6177F" stroke="#1B1030" stroke-width="5" stroke-linejoin="round"/></g>
+        <!-- flamingos -->
+        <g transform="translate(150 330)"><path d="M0 0v54" stroke="#1B1030" stroke-width="5"/><ellipse cx="0" cy="-8" rx="22" ry="16" fill="#FF6FB0" stroke="#1B1030" stroke-width="4"/><path d="M12 -14c14-10 8-34 2-44" fill="none" stroke="#1B1030" stroke-width="9" stroke-linecap="round"/><path d="M12 -14c14-10 8-34 2-44" fill="none" stroke="#FF6FB0" stroke-width="4.5" stroke-linecap="round"/><circle cx="18" cy="-60" r="7" fill="#FF6FB0" stroke="#1B1030" stroke-width="3"/><path d="M23 -60l10 4-9 3z" fill="#1B1030"/></g>
+        <g transform="translate(205 345) scale(.85)"><path d="M0 0v54" stroke="#1B1030" stroke-width="5"/><ellipse cx="0" cy="-8" rx="22" ry="16" fill="#FF6FB0" stroke="#1B1030" stroke-width="4"/><path d="M12 -14c14-10 8-34 2-44" fill="none" stroke="#1B1030" stroke-width="9" stroke-linecap="round"/><path d="M12 -14c14-10 8-34 2-44" fill="none" stroke="#FF6FB0" stroke-width="4.5" stroke-linecap="round"/><circle cx="18" cy="-60" r="7" fill="#FF6FB0" stroke="#1B1030" stroke-width="3"/><path d="M23 -60l10 4-9 3z" fill="#1B1030"/></g>
+        <!-- small signs -->
+        <g transform="translate(340 340)"><rect x="-3" y="0" width="6" height="40" fill="#8B5A2B"/><rect x="-34" y="-38" width="68" height="40" rx="12" fill="#FFD21F" stroke="#1B1030" stroke-width="4"/><text x="0" y="-12" text-anchor="middle" font-family="Chewy,cursive" font-size="22" fill="#1B1030">LIAM</text></g>
+        <g transform="translate(420 355)"><rect x="-3" y="0" width="6" height="35" fill="#8B5A2B"/><rect x="-30" y="-34" width="60" height="36" rx="12" fill="#6A2FD0" stroke="#1B1030" stroke-width="4"/><text x="0" y="-9" text-anchor="middle" font-family="Chewy,cursive" font-size="22" fill="#fff">4!</text></g>
+        <!-- floating hearts -->
+        <use href="#i-heart" x="250" y="90" width="38" height="38" style="color:#E6177F" class="bob d3"/>
+        <use href="#i-heart" x="40" y="80" width="30" height="30" style="color:#6A2FD0" class="bob d1"/>
+        <use href="#i-star" x="150" y="40" width="30" height="30" style="color:#FFD21F" class="bob d2"/>
+      </svg>
+    </div>
+  </div>
+  <div class="grass" aria-hidden="true" style="margin-top:20px"></div>
+</section>
+<div class="grass-fill" aria-hidden="true"></div>

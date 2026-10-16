@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icons from '../components/Icons.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Occasions from '../components/Occasions.astro';
+import Packages from '../components/Packages.astro';
+import Flamingos from '../components/Flamingos.astro';
+import Anonymous from '../components/Anonymous.astro';
+import ServiceArea from '../components/ServiceArea.astro';
+import OrderForm from '../components/OrderForm.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout>
+  <Icons />
+  <a class="skip" href="#order">Skip to the order form</a>
+  <Header />
+  <main id="top">
+    <Hero />
+    <HowItWorks />
+    <Occasions />
+    <Packages />
+    <Flamingos />
+    <Anonymous />
+    <ServiceArea />
+    <OrderForm />
+  </main>
+  <Footer />
+</Layout>
